@@ -36,7 +36,7 @@ int DA::getGroup(Cards tefuda,const Hand &group,bool lock,bool rev,Hand *out){
 	const int end = rev?group.low:14;
 	for(int i=start;i<end;i++){
 		const uint8_t suit = (tefuda>>(4*i))&0xf;
-		uint8_t *p = (uint8_t*)groupmemo[suit][lock][qty][hasjoker];
+		uint8_t *p = (uint8_t*)groupmemo[suit][group.suit][qty][hasjoker];
 		while(*p){
 			*ptr++ = DA::Hand::Group(*p,i,(*p)^(suit&(*p)));
 			p++;

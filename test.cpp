@@ -134,8 +134,15 @@ TEST(getStair,random){
 
 TEST(validHands,1){
 	Hand hs[512];
-	int num = validHands(0xf00ull,Hand::Group(1,1),true,false,hs);
-	ASSERT_EQ(num,1+1);//1+PassHand
+	int num = validHands(0xffffffffff0ull,Hand::Group(4,1),true,false,hs);
+	for(int i=0;i<num;i++){
+		if(!hs[i].ispass()){
+			if(hs[i].suit!=4){
+				std::cout << i << std::endl;
+				FAIL();
+			}
+		}
+	}
 }
 
 TEST(simulator,randominit){
@@ -172,6 +179,9 @@ TEST(simulator,finitetime){
 					EXPECT_EQ(hs[k].cards()&0xfull,0);
 					EXPECT_EQ(hs[k].cards()&tefuda,hs[k].cards());
 					EXPECT_EQ(popcnt(hs[k].cards()),hs[k].qty());
+					if(sim.lock){
+						hs[k].suit == sim.ontable.suit;
+					}
 				}
 				std::uniform_int_distribution<int> distribution( 0, num-1 ) ;
 				sim.puthand(hs[distribution(mt)]);
@@ -243,6 +253,43 @@ Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
 			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
 		*/
 		montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,1000);
+	}
+}
+
+TEST(montecarlo_uniform,lock){
+	simulator sim;
+	for(int i=0;i<10;i++){
+		sim.initializeRandom();
+		sim.lock = true;
+		sim.ontable = Hand::Group(1,1);
+		Cards rest = 0;
+		int nums[simulator::playernum];
+		for(int i=1;i<simulator::playernum;i++){
+			rest |= sim.hands[i];
+			nums[i] = popcnt(sim.hands[i]);
+		}
+		/*
+Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
+			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
+		*/
+		auto h = montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,1000);
+		if(!h.ispass()){
+			if(h.suit!=sim.ontable.suit){
+				std::cout << std::hex
+					<< (int)sim.ontable.type << " "
+					<< (int)sim.ontable.suit << " "
+					<< (int)sim.ontable.low << " "
+					<< (int)sim.ontable.high << " "
+					<< (int)sim.ontable.joker << std::endl;
+				std::cout << std::hex
+					<< (int)h.type << " "
+					<< (int)h.suit << " "
+					<< (int)h.low << " "
+					<< (int)h.high << " "
+					<< (int)h.joker << std::endl;
+				FAIL();
+			}
+		}
 	}
 }
 

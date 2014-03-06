@@ -62,9 +62,28 @@ DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &
 	return myhands[bandit.next()];
 }
 
-uint64_t DA::montecarlo_uniform_foreign(Cards mytefuda,Cards rest,int mypos,uint64_t ontable_bin
-			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum){
+uint64_t DA::montecarlo_uniform_foreign(uint64_t mytefuda,uint64_t rest,int32_t mypos,uint64_t ontable_bin
+			,int32_t *tefudanums,uint8_t passflag,uint8_t goalflag,uint8_t lock,uint8_t rev,int32_t playoutnum){
 	const Hand ontable = Hand::fromBin(ontable_bin);
-	const Hand ret = montecarlo_uniform(mytefuda,rest,mypos,ontable,tefudanums,passflag,goalflag,lock,rev,playoutnum);
+	int tn[5];
+	for(int i=0;i<5;i++){
+		tn[i] = tefudanums[i];
+	}
+	/*
+	std::cout << (int)lock << " " << (int)rev << " " 
+	<< (int) ontable.suit << " "
+	<< std::hex << (int)ontable.type
+	<<std::endl;
+	*/
+	const Hand ret = montecarlo_uniform(mytefuda,rest,mypos,ontable,tn,passflag,goalflag,lock,rev,playoutnum);
+/*	
+	std::cout << std::hex 
+	<< (int)ret.type << " " 
+	<< (int)ret.suit << " "
+	<< (int)ret.low << " "
+	<< (int)ret.high << " "
+	<< (int)ret.joker
+	<<std::endl;
+*/
 	return ret.toBin();
 }
