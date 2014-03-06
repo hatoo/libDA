@@ -1,0 +1,1760 @@
+[==========] Running 22 tests from 13 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from popcnt
+[ RUN      ] popcnt.test
+[       OK ] popcnt.test (0 ms)
+[----------] 1 test from popcnt (0 ms total)
+
+[----------] 1 test from SingleJoker
+[ RUN      ] SingleJoker.cards
+[       OK ] SingleJoker.cards (0 ms)
+[----------] 1 test from SingleJoker (0 ms total)
+
+[----------] 1 test from PassHand
+[ RUN      ] PassHand.cards
+[       OK ] PassHand.cards (0 ms)
+[----------] 1 test from PassHand (0 ms total)
+
+[----------] 1 test from Hand
+[ RUN      ] Hand.Bin
+[       OK ] Hand.Bin (0 ms)
+[----------] 1 test from Hand (0 ms total)
+
+[----------] 2 tests from Hand_Group
+[ RUN      ] Hand_Group.qty
+[       OK ] Hand_Group.qty (0 ms)
+[ RUN      ] Hand_Group.cards
+[       OK ] Hand_Group.cards (0 ms)
+[----------] 2 tests from Hand_Group (0 ms total)
+
+[----------] 2 tests from Hand_Stair
+[ RUN      ] Hand_Stair.qty
+[       OK ] Hand_Stair.qty (0 ms)
+[ RUN      ] Hand_Stair.cards
+[       OK ] Hand_Stair.cards (0 ms)
+[----------] 2 tests from Hand_Stair (0 ms total)
+
+[----------] 3 tests from getGroup
+[ RUN      ] getGroup.size
+[       OK ] getGroup.size (0 ms)
+[ RUN      ] getGroup.sim
+[       OK ] getGroup.sim (0 ms)
+[ RUN      ] getGroup.random
+[       OK ] getGroup.random (7 ms)
+[----------] 3 tests from getGroup (7 ms total)
+
+[----------] 3 tests from getStair
+[ RUN      ] getStair.size
+[       OK ] getStair.size (0 ms)
+[ RUN      ] getStair.sim
+[       OK ] getStair.sim (0 ms)
+[ RUN      ] getStair.random
+[       OK ] getStair.random (4 ms)
+[----------] 3 tests from getStair (4 ms total)
+
+[----------] 1 test from validHands
+[ RUN      ] validHands.1
+[       OK ] validHands.1 (0 ms)
+[----------] 1 test from validHands (0 ms total)
+
+[----------] 3 tests from simulator
+[ RUN      ] simulator.randominit
+[       OK ] simulator.randominit (1 ms)
+[ RUN      ] simulator.finitetime
+[       OK ] simulator.finitetime (1422 ms)
+[ RUN      ] simulator.humancheck
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 D12 C12 C13 H1 D1 D2 JOKER ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 46/48
+type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+
+ontable: type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 2 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 3
+pass: 6 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: e goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 10 high: 13 joker: 11 [ D12 D1 D2 JOKER ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 1e goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13 H1  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 7/7
+type:Group low: 12 high: 12 joker: 0 [ H1  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ H1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ H1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 H2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 2 goalflag: 0 lock: 0 rev: 0
+choose 0/1
+type:Group low: 13 high: 13 joker: 0 [ H2  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ H2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 3
+pass: 2 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ H2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: a goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ H2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 1a goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ H2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 1b goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12 S2 C2  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 14/14
+type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 18 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 1
+pass: 19 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 13 high: 13 joker: 0 [ S2 C2  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 1b goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 H9 D9 C9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 7/11
+type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 0 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 18 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 1
+pass: 19 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ H9 C9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 1b goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D9 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 3/5
+type:Group low: 7 high: 7 joker: 0 [ D9  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ D9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 7 high: 7 joker: 0 [ D9  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 D11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 0 rev: 0
+choose 0/1
+type:Group low: 9 high: 9 joker: 0 [ D11  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ D11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 H12 S13 H13 S1  ]
+turn: 0
+pass: 8 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ D11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 H12 S13 H13 S1  ]
+turn: 1
+pass: 9 goalflag: 0 lock: 1 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ D11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 H12 S13 H13 S1  ]
+turn: 2
+pass: b goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ D11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: f goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 H12 S13 H13 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 6/11
+type:Group low: 10 high: 10 joker: 0 [ H12  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ H12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ H12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 1
+pass: 1 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ H12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 2
+pass: 3 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ H12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 3
+pass: 7 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ H12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 4
+pass: f goalflag: 0 lock: 0 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 H11 C11 S13 H13 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 5/9
+type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 1
+pass: 1 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 2
+pass: 3 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 3
+pass: 7 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 9 high: 9 joker: 0 [ H11 C11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 4
+pass: f goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S8 S13 H13 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 2/6
+type:Group low: 6 high: 6 joker: 0 [ S8  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S13 H13 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 2/5
+type:Group low: 11 high: 11 joker: 0 [ S13  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ S13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ S13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 1
+pass: 1 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ S13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 2
+pass: 3 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ S13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 3
+pass: 7 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ S13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 4
+pass: f goalflag: 0 lock: 0 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 H13 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 2/3
+type:Group low: 11 high: 11 joker: 0 [ H13  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ H13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ H13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 1
+pass: 1 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ H13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 2
+pass: 3 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ H13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 3
+pass: 7 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ H13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 4
+pass: f goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ H3 S4 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/2
+type:Group low: 1 high: 1 joker: 0 [ H3  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ H3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ H3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 1 goalflag: 0 lock: 0 rev: 0
+choose 3/3
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ H3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 3 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ H3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 H7 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 7 goalflag: 0 lock: 0 rev: 0
+choose 2/3
+type:Group low: 5 high: 5 joker: 0 [ H7  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ H7  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 7 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ H7  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 17 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 S6 H6 C6 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 9/12
+type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 10 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 11 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 13 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ S6 H6 C6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 17 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 H5 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 2/5
+type:Group low: 3 high: 3 joker: 0 [ H5  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ H5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ H5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 10 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ H5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 H8 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 11 goalflag: 0 lock: 0 rev: 0
+choose 0/2
+type:Group low: 6 high: 6 joker: 0 [ H8  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 S9 S10 H10 S11 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 12/12
+type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+
+ontable: type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 4 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 1c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Stair low: 7 high: 9 joker: 255 [ S9 S10 S11  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 1d goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D7 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 4/7
+type:Group low: 5 high: 5 joker: 0 [ D7  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ D7  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 D10 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/1
+type:Group low: 8 high: 8 joker: 0 [ D10  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ D10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ D10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ D10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 18 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ D10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 19 goalflag: 0 lock: 1 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ D10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 1b goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 D6 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 1/3
+type:Group low: 4 high: 4 joker: 0 [ D6  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ D6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ D6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ D6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 18 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 4 high: 4 joker: 0 [ D6  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10 D13  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 19 goalflag: 0 lock: 0 rev: 0
+choose 1/2
+type:Group low: 11 high: 11 joker: 0 [ D13  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ D13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 19 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ D13  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 1d goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8 H10  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 5/5
+type:Group low: 8 high: 8 joker: 0 [ H10  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ H10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ H10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 4 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ H10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ H10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 1c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ H10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 1d goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 2/4
+type:Group low: 3 high: 3 joker: 0 [ D5  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ D5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ D5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 4 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ D5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ D5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 0
+pass: 1c goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ D5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5 D8  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 1d goalflag: 0 lock: 0 rev: 0
+choose 0/1
+type:Group low: 6 high: 6 joker: 0 [ D8  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4 S5  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 1
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 1/1
+type:Group low: 3 high: 3 joker: 0 [ S5  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ S5  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8 S12  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 2
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/1
+type:Group low: 10 high: 10 joker: 0 [ S12  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ S12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 3
+pass: 0 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ S12  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4 S1  ]
+turn: 4
+pass: 8 goalflag: 0 lock: 1 rev: 0
+choose 0/1
+type:Group low: 12 high: 12 joker: 0 [ S1  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ S1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4  ]
+turn: 0
+pass: 8 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ S1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4  ]
+turn: 1
+pass: 9 goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ S1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4  ]
+turn: 2
+pass: b goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ S1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4  ]
+turn: 4
+pass: f goalflag: 0 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [ S4  ]
+turn: 4
+pass: 0 goalflag: 0 lock: 0 rev: 0
+choose 0/0
+type:Group low: 2 high: 2 joker: 0 [ S4  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ S4  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 0
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ S4  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 1
+pass: 11 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ S4  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 2
+pass: 13 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ S4  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 17 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C3 C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 0/4
+type:Group low: 1 high: 1 joker: 0 [ C3  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ C3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 0
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 3/3
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ C3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 1
+pass: 11 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ C3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 2
+pass: 13 goalflag: 10 lock: 0 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ C3  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C4 C7 C10 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 17 goalflag: 10 lock: 0 rev: 0
+choose 0/4
+type:Group low: 2 high: 2 joker: 0 [ C4  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ C4  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7 C10 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 17 goalflag: 10 lock: 1 rev: 0
+choose 1/3
+type:Group low: 8 high: 8 joker: 0 [ C10  ]
+
+ontable: type:Group low: 8 high: 8 joker: 0 [ C10  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 17 goalflag: 10 lock: 1 rev: 0
+choose 1/1
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7 C1  ]
+player[4] has [  ]
+turn: 3
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 1/1
+type:Group low: 12 high: 12 joker: 0 [ C1  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ C1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7  ]
+player[4] has [  ]
+turn: 0
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ C1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7  ]
+player[4] has [  ]
+turn: 1
+pass: 11 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ C1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7  ]
+player[4] has [  ]
+turn: 2
+pass: 13 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 12 high: 12 joker: 0 [ C1  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7  ]
+player[4] has [  ]
+turn: 3
+pass: 17 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [ C7  ]
+player[4] has [  ]
+turn: 3
+pass: 10 goalflag: 10 lock: 0 rev: 0
+choose 0/0
+type:Group low: 5 high: 5 joker: 0 [ C7  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ C7  ]
+player[0] has [ S3 D3 C5 S7 C12 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 18 goalflag: 18 lock: 0 rev: 0
+choose 0/2
+type:Group low: 10 high: 10 joker: 0 [ C12  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ C12  ]
+player[0] has [ S3 D3 C5 S7 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 18 goalflag: 18 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ C12  ]
+player[0] has [ S3 D3 C5 S7 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 2
+pass: 1a goalflag: 18 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 10 high: 10 joker: 0 [ C12  ]
+player[0] has [ S3 D3 C5 S7 C13  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1e goalflag: 18 lock: 1 rev: 0
+choose 0/1
+type:Group low: 11 high: 11 joker: 0 [ C13  ]
+
+ontable: type:Group low: 11 high: 11 joker: 0 [ C13  ]
+player[0] has [ S3 D3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1e goalflag: 18 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 D3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 18 goalflag: 18 lock: 0 rev: 0
+choose 1/4
+type:Group low: 1 high: 1 joker: 0 [ D3  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ D3  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 18 goalflag: 18 lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ D3  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ D4 C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 2
+pass: 1a goalflag: 18 lock: 0 rev: 0
+choose 0/1
+type:Group low: 2 high: 2 joker: 0 [ D4  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ D4  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1a goalflag: 18 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 2 high: 2 joker: 0 [ D4  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 2
+pass: 1b goalflag: 18 lock: 1 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [ C8  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 2
+pass: 18 goalflag: 18 lock: 0 rev: 0
+choose 0/0
+type:Group low: 6 high: 6 joker: 0 [ C8  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 C5 S7  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1c goalflag: 1c lock: 0 rev: 0
+choose 2/2
+type:Group low: 5 high: 5 joker: 0 [ S7  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ S7  ]
+player[0] has [ S3 C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 1c goalflag: 1c lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 5 high: 5 joker: 0 [ S7  ]
+player[0] has [ S3 C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1e goalflag: 1c lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ S3 C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1c goalflag: 1c lock: 0 rev: 0
+choose 0/1
+type:Group low: 1 high: 1 joker: 0 [ S3  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ S3  ]
+player[0] has [ C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 1c goalflag: 1c lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Group low: 1 high: 1 joker: 0 [ S3  ]
+player[0] has [ C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1e goalflag: 1c lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [ C5  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 0
+pass: 1c goalflag: 1c lock: 0 rev: 0
+choose 0/0
+type:Group low: 3 high: 3 joker: 0 [ C5  ]
+
+ontable: type:Group low: 3 high: 3 joker: 0 [ C5  ]
+player[0] has [  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 1d goalflag: 1d lock: 0 rev: 0
+choose 0/0
+type:Pass low: 0 high: 0 joker: 0 [  ]
+
+ontable: type:Pass low: 0 high: 0 joker: 0 [  ]
+player[0] has [  ]
+player[1] has [ H4  ]
+player[2] has [  ]
+player[3] has [  ]
+player[4] has [  ]
+turn: 1
+pass: 1d goalflag: 1d lock: 0 rev: 0
+choose 0/0
+type:Group low: 2 high: 2 joker: 0 [ H4  ]
+
+[       OK ] simulator.humancheck (8 ms)
+[----------] 3 tests from simulator (1433 ms total)
+
+[----------] 1 test from simulatorInitializer
+[ RUN      ] simulatorInitializer.initialize
+[       OK ] simulatorInitializer.initialize (0 ms)
+[----------] 1 test from simulatorInitializer (0 ms total)
+
+[----------] 1 test from ucb1_tuned
+[ RUN      ] ucb1_tuned.weaktest
+[       OK ] ucb1_tuned.weaktest (10 ms)
+[----------] 1 test from ucb1_tuned (10 ms total)
+
+[----------] 2 tests from montecarlo_uniform
+[ RUN      ] montecarlo_uniform.finitetime
+[       OK ] montecarlo_uniform.finitetime (889 ms)
+[ RUN      ] montecarlo_uniform.lock
+[       OK ] montecarlo_uniform.lock (616 ms)
+[----------] 2 tests from montecarlo_uniform (1505 ms total)
+
+[----------] Global test environment tear-down
+[==========] 22 tests from 13 test cases ran. (2960 ms total)
+[  PASSED  ] 22 tests.

@@ -5,7 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-
+#include <iostream>
 
 inline bool resethand(DA::Cards ontable,DA::Cards put){
 	if((put&DA::Eights)!=0){
@@ -19,6 +19,7 @@ inline bool resethand(DA::Cards ontable,DA::Cards put){
 
 inline int nextturn(int turn,uint8_t flag){
 	if(flag==((1<<DA::simulator::playernum)-1)){
+		std::cout << "debug" << std::endl;
 		return turn;
 	}
 	do{
@@ -46,15 +47,16 @@ void DA::simulator::puthand(const Hand& hand){
 		const Cards tefuda = CurrentPlayerHand()^cs;
 		const Cards tablecards = ontable.cards();
 		hands[turn] = tefuda;
+		ontable = hand;
 		if(tefuda==0ull){
 			goalflag |= 1<<turn;
 			passflag |= goalflag;
-			if(resethand(tablecards,cs)||passflag==fullraise){
-				reset();
-			}
 			if(goalflag==fullraise){
 				return;
 			}else{
+				if(passflag==fullraise||resethand(tablecards,cs)){
+					reset();
+				}
 				turn = nextturn(turn,passflag);
 			}
 		}else{
@@ -66,6 +68,42 @@ void DA::simulator::puthand(const Hand& hand){
 		}
 		
 	}
+		/*
+	if(hand.ispass()){
+		passflag |= 1<<turn;
+		if(passflag==fullraise){
+			reset();
+		}else{
+			turn = nextturn(turn,passflag);
+		}
+	}else{
+		lock = lock||(ontable.suit==hand.suit);
+		if(hand.isrev()){
+			rev = !rev;
+		}
+		const Cards cs = hand.cards();
+		const Cards tefuda = CurrentPlayerHand()^cs;
+		const Cards tablecards = ontable.cards();
+		hands[turn] = tefuda;
+		if(tefuda==0ull){
+			goalflag |= 1<<turn;
+		}
+		if(goalflag==fullraise)return;
+		if(resethand(tablecards,cs)){
+			reset();
+			if(tefuda==0ull){
+				turn = nextturn(turn,passflag);
+			}
+		}else{
+			if(passflag==fullraise){
+				reset();
+			}else{
+				ontable = hand;
+			}
+			turn = nextturn(turn,passflag);
+		}
+	}
+	*/
 }
 
 void DA::simulator::initializeRandom(){

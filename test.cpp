@@ -10,6 +10,52 @@
 
 using namespace DA;
 
+void dump(Cards cs){
+	char prefixs[] = "SHDC";
+	int nums[] = {0,3,4,5,6,7,8,9,10,11,12,13,1,2,99,99,99,99};
+	std::cout << "[ ";
+	for(int i=0;i<52+4;i++){
+		if((cs>>i)&1)
+		std::cout << prefixs[i%4] << std::dec << nums[i/4] << " ";
+	}
+	if(cs&JOKER){
+		std::cout << "JOKER";
+	}
+	std::cout << " ]" << std::endl;
+}
+
+void dump(const Hand &h){
+	switch(h.type){
+		case HandType::PASS:
+			std::cout << "type:Pass ";
+			break;
+		case HandType::GROUP:
+			std::cout << "type:Group ";
+			break;
+		case HandType::STAIR:
+			std::cout << "type:Stair ";
+			break;
+		default:
+			std::cout << "type:broken("<<(int)h.type<<") ";
+	}
+	std::cout << "low: " << (int)h.low << " ";
+	std::cout << "high: " << (int)h.high << " ";
+	std::cout << "joker: " << (int)h.joker << " ";
+	dump(h.cards());
+}
+
+void dump(const simulator &sim){
+	std::cout << "ontable: ";
+	dump(sim.ontable);
+	for(int i=0;i<simulator::playernum;i++){
+		std::cout << "player[" << i << "] has ";
+		dump(sim.hands[i]);
+	}
+	std::cout << "turn: " << sim.turn << std::endl;
+	std::cout << "pass: " << std::hex << (int)sim.passflag << " goalflag: " << (int)sim.goalflag;
+	std::cout << " lock: " << (int)sim.lock << " rev: " << (int)sim.rev << std::endl;
+}
+
 TEST(popcnt,test){
 	ASSERT_EQ(popcnt(0x111full),7);
 }
@@ -162,36 +208,51 @@ TEST(simulator,finitetime){
 	std::mt19937_64 mt(1234);
 	simulator sim;
 	Hand hs[512];
-	for(int i=0;i<1000;i++){
+	int counts[5]={0};
+	for(int i=0;i<10000;i++){
 		sim.initializeRandom();
 		int n = 0;
 		uint8_t prevgoal = sim.goalflag;
 		while(popcnt(sim.goalflag)<simulator::playernum){
-			for(int i=0;i<simulator::playernum;i++){
-				if(sim.goalflag&(1<<i)){
-					ASSERT_EQ(sim.hands[i],0);
-					ASSERT_EQ(sim.passflag&(1<<i),1<<i);
+			for(int k=0;k<simulator::playernum;k++){
+				if(sim.goalflag&(1<<k)){
+					ASSERT_EQ(sim.hands[k],0);
+					ASSERT_EQ(sim.passflag&(1<<k),1<<k);
+					ASSERT_EQ(sim.isend(k),true);
 				}
 			}
+			counts[sim.turn]++;
+			EXPECT_TRUE((sim.ontable.cards()&Eights)==0);
 			Cards tefuda = sim.CurrentPlayerHand();
 			ASSERT_EQ(tefuda&0xf,0);
 			ASSERT_EQ(tefuda&(~((JOKER<<1)-1)),0);
 			int num = validHands(tefuda,sim.ontable,sim.lock,sim.rev,hs);
 			if(num>0){
-			//std::cout << sim.lock << " " << sim.rev << std::endl;
-			//std::cout << (int)hs[0].type << " " << std::hex << (int)hs[0].suit << " " << (int)hs[0].low <<
-			//	(int)hs[0].joker <<std::endl;
-			//std::cout << std::hex << tefuda << std::endl;
 				for(int k=0;k<num;k++){
+					ASSERT_LT(hs[k].suit ,0x10);
 					ASSERT_EQ(hs[k].cards()&0xf,0);
 					EXPECT_EQ(hs[k].cards()&0xfull,0);
 					EXPECT_EQ(hs[k].cards()&tefuda,hs[k].cards());
+					if((hs[k].cards()&tefuda)!=hs[k].cards()){
+						FAIL();
+					}
+
 					EXPECT_EQ(popcnt(hs[k].cards()),hs[k].qty());
-					if(sim.lock){
-						hs[k].suit == sim.ontable.suit;
+					
+					if(!hs[k].ispass()&& !(sim.ontable.cards()==JOKER&&hs[k].cards()==S3)){
+						if(sim.rev){
+							EXPECT_LT((int)hs[k].low,(int)sim.ontable.low);
+						}else{
+							EXPECT_LT((int)sim.ontable.low,(int)hs[k].low);
+						}
+					}
+					if(!hs[k].ispass()&& !(sim.ontable.cards()==JOKER) && hs[k].cards()!=JOKER){
+						if(sim.lock){
+							ASSERT_EQ(hs[k].suit,sim.ontable.suit);
+						}
 					}
 				}
-				std::uniform_int_distribution<int> distribution( 0, num-1 ) ;
+				std::uniform_int_distribution<int> distribution( 0, num-1 );
 				sim.puthand(hs[distribution(mt)]);
 			}else{
 				FAIL();
@@ -200,7 +261,7 @@ TEST(simulator,finitetime){
 			EXPECT_EQ(prevgoal,prevgoal&sim.goalflag);
 			EXPECT_EQ(sim.passflag&sim.goalflag,sim.goalflag);
 			prevgoal = sim.goalflag;
-			if(++n > 10001){
+			if(++n > 1000){
 				std::cout << std::hex 
 				<< " turn:" << sim.turn
 				<< " goal:" << (int)sim.goalflag 
@@ -215,6 +276,40 @@ TEST(simulator,finitetime){
 				<< std::endl;
 				FAIL();
 				break;
+			}
+		}
+	}
+	for(int i=0;i<5;i++){
+		//std::cout << counts[i] << " " ;
+	}
+	//std::cout << std::endl;
+}
+
+TEST(simulator,humancheck){
+	std::mt19937_64 mt(1234);
+	simulator sim;
+	Hand hs[512];
+	int counts[5]={0};
+	for(int i=0;i<1;i++){
+		sim.initializeRandom();
+		while(popcnt(sim.goalflag)<simulator::playernum){
+			counts[sim.turn]++;
+			Cards tefuda = sim.CurrentPlayerHand();
+			ASSERT_EQ(tefuda&0xf,0);
+			ASSERT_EQ(tefuda&(~((JOKER<<1)-1)),0);
+			int num = validHands(tefuda,sim.ontable,sim.lock,sim.rev,hs);
+			if(num>0){
+				std::uniform_int_distribution<int> distribution( 0, num-1 );
+				auto r = distribution(mt);
+				auto h = hs[r];
+				dump(sim);
+				std::cout << "choose " << std::dec << r << "/" << num-1 << std::endl;
+ 				dump(h);
+				std::cout << std::endl;
+				sim.puthand(h);
+			}else{
+				FAIL();
+				sim.puthand(PassHand);
 			}
 		}
 	}
@@ -235,6 +330,9 @@ TEST(simulatorInitializer,initialize){
 			EXPECT_EQ(popcnt(sim.hands[i]),4);
 			sum+=popcnt(sim.hands[i]);
 			all |= sim.hands[i];
+			for(int k=i+1;k<5;k++){
+				EXPECT_EQ(sim.hands[i]&sim.hands[k],0);
+			}
 		}
 		EXPECT_EQ(sum,20);
 		EXPECT_EQ(all,0xfffff0ull);

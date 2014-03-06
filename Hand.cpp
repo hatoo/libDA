@@ -83,8 +83,8 @@ int DA::getStair(Cards tefuda,const Hand &stair,bool lock,bool rev,Hand *out){
 	const int end = rev?stair.low:15;
 
 	const uint8_t suits[] = {0x1,0x2,0x4,0x8,stair.suit};
-	const int ss = lock?5:0;
-	const int se = lock?6:4;
+	const int ss = lock?4:0;
+	const int se = lock?5:4;
 	for(int low=start;low<end;low++){
 		for(int i=ss;i<se;i++){
 			const Cards suit = suits[i];//u<<i;

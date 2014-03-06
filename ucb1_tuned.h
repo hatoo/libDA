@@ -14,6 +14,9 @@ namespace Bandit{
 		UCB1_record():j(0),sumsqr(0),sum(0){}
 		double v(int n);
 		void put(double s);
+		double mean()const{
+			return j>0?sum/j:0;
+		}
 	};
 
 	class UCB1_tuned{
@@ -22,6 +25,7 @@ namespace Bandit{
 	public:
 		UCB1_tuned(int num):n(0),records(num){}
 		int next();
+		int bestmean();
 		int putscore(int idx,double score);
 	};
 }

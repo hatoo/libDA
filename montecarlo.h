@@ -31,7 +31,7 @@ namespace DA{
 			,int *_tefudanums,uint8_t _passflag,uint8_t _goalflag,bool _lock,bool _rev)
 		:mytefuda(_mytefuda),rest(_rest),mypos(_mypos),ontable(_ontable),passflag(_passflag),goalflag(_goalflag),lock(_lock),rev(_rev){
 			std::copy(_tefudanums,_tefudanums+simulator::playernum,tefudanums);
-			unsigned seed1 = 1000000;//std::chrono::system_clock::now().time_since_epoch().count();
+			unsigned seed1 = 124567;//std::chrono::system_clock::now().time_since_epoch().count();
 			std::mt19937 engine( seed1 ) ;
 			mt = engine;
 			rest = rest & (~mytefuda);

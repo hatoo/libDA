@@ -38,3 +38,16 @@ int Bandit::UCB1_tuned::putscore(int idx,double score){
 	++n;
 	records[idx].put(score);
 }
+
+int Bandit::UCB1_tuned::bestmean(){
+	int idx = 0;
+	double mv = 0;
+	for(int i=0;i<records.size();i++){
+		double v = records[i].mean();
+		if(mv<v){
+			idx = i;
+			mv = v;
+		}
+	}
+	return idx;
+}
