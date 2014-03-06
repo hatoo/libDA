@@ -70,7 +70,7 @@ DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &
 					}
 				}
 				if(!f){
-					std::uniform_int_distribution<int> distribution( 0, n-2 ) ;
+					std::uniform_int_distribution<int> distribution( 0, n-1 ) ;
 					sim.puthand(buf[distribution(engine)]);
 				}
 			}
