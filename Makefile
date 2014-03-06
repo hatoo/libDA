@@ -21,3 +21,7 @@ simulate.o : Card.h Hand.h simulate.cpp simulate.h
 
 montecarlo.o : montecarlo.cpp montecarlo.h
 	$(CC) -c -o montecarlo.o montecarlo.cpp
+
+clean :
+	rm *.o
+	rm *.exe

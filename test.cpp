@@ -5,6 +5,8 @@
 #include "simulate.h"
 #include <iostream>
 #include <random>
+#include <algorithm>
+#include <set>
 
 using namespace DA;
 
@@ -164,7 +166,13 @@ TEST(simulator,finitetime){
 		sim.initializeRandom();
 		int n = 0;
 		uint8_t prevgoal = sim.goalflag;
-		while(popcnt(sim.goalflag)<simulator::playernum-1){
+		while(popcnt(sim.goalflag)<simulator::playernum){
+			for(int i=0;i<simulator::playernum;i++){
+				if(sim.goalflag&(1<<i)){
+					ASSERT_EQ(sim.hands[i],0);
+					ASSERT_EQ(sim.passflag&(1<<i),1<<i);
+				}
+			}
 			Cards tefuda = sim.CurrentPlayerHand();
 			ASSERT_EQ(tefuda&0xf,0);
 			ASSERT_EQ(tefuda&(~((JOKER<<1)-1)),0);
@@ -186,6 +194,7 @@ TEST(simulator,finitetime){
 				std::uniform_int_distribution<int> distribution( 0, num-1 ) ;
 				sim.puthand(hs[distribution(mt)]);
 			}else{
+				FAIL();
 				sim.puthand(PassHand);
 			}
 			EXPECT_EQ(prevgoal,prevgoal&sim.goalflag);
@@ -193,17 +202,17 @@ TEST(simulator,finitetime){
 			prevgoal = sim.goalflag;
 			if(++n > 10001){
 				std::cout << std::hex 
-					<< " turn:" << sim.turn
-					<< " goal:" << (int)sim.goalflag 
-					<< " pass:" << (int)sim.passflag 
-					<< " passcount: " << (int)popcnt(sim.passflag) 
-					<< " tefudacount " 
-					<< popcnt(sim.hands[0]) << " " 
-					<< popcnt(sim.hands[1]) << " "
-					<< popcnt(sim.hands[2]) << " "
-					<< popcnt(sim.hands[3]) << " "
-					<< popcnt(sim.hands[4]) << " "
-					<< std::endl;
+				<< " turn:" << sim.turn
+				<< " goal:" << (int)sim.goalflag 
+				<< " pass:" << (int)sim.passflag 
+				<< " passcount: " << (int)popcnt(sim.passflag) 
+				<< " tefudacount " 
+				<< popcnt(sim.hands[0]) << " " 
+				<< popcnt(sim.hands[1]) << " "
+				<< popcnt(sim.hands[2]) << " "
+				<< popcnt(sim.hands[3]) << " "
+				<< popcnt(sim.hands[4]) << " "
+				<< std::endl;
 				FAIL();
 				break;
 			}
@@ -217,25 +226,34 @@ TEST(simulatorInitializer,initialize){
 	int numtefudas[] = {4,4,4,4,4};
 	simulatorInitializer si(mytefuda,rest,0,PassHand,numtefudas,0,0,false,false);
 	simulator sim;
-	si.initialize(sim);
-	int sum = 0;
-	Cards all = 0ull;
-	for(int i=0;i<5;i++){
-		EXPECT_EQ(popcnt(sim.hands[i]),4);
-		sum+=popcnt(sim.hands[i]);
-		all |= sim.hands[i];
+	Cards cs[5];
+	for(int i=0;i<100;i++){
+		si.initialize(sim);
+		int sum = 0;
+		Cards all = 0ull;
+		for(int i=0;i<5;i++){
+			EXPECT_EQ(popcnt(sim.hands[i]),4);
+			sum+=popcnt(sim.hands[i]);
+			all |= sim.hands[i];
+		}
+		EXPECT_EQ(sum,20);
+		EXPECT_EQ(all,0xfffff0ull);
+		EXPECT_EQ(sim.CurrentPlayerHand(),mytefuda);
+		EXPECT_EQ(std::equal(cs,cs+5,sim.hands),false);
+		std::copy(sim.hands,sim.hands+5,cs);
 	}
-	EXPECT_EQ(sum,20);
-	EXPECT_EQ(all,0xfffff0ull);
 }
 
 TEST(ucb1_tuned,weaktest){
 	Bandit::UCB1_tuned ut(100);
+	std::set<int> idxs;
 	for(int i=0;i<1000;i++){
 		const int idx = ut.next();
 		ut.putscore(idx,1.0/100*idx);
+		idxs.insert(idx);
 	}
-	ASSERT_EQ(ut.next(),99);
+	EXPECT_EQ(idxs.size(),100);
+	EXPECT_EQ(ut.next(),99);
 }
 
 TEST(montecarlo_uniform,finitetime){
@@ -248,11 +266,9 @@ TEST(montecarlo_uniform,finitetime){
 			rest |= sim.hands[i];
 			nums[i] = popcnt(sim.hands[i]);
 		}
-		/*
-Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
-			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
-		*/
-		montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,1000);
+		/*Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
+			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);*/
+		montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,5000);
 	}
 }
 
@@ -272,25 +288,25 @@ TEST(montecarlo_uniform,lock){
 Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
 			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
 		*/
-		auto h = montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,1000);
-		if(!h.ispass()){
-			if(h.suit!=sim.ontable.suit){
-				std::cout << std::hex
-					<< (int)sim.ontable.type << " "
-					<< (int)sim.ontable.suit << " "
-					<< (int)sim.ontable.low << " "
-					<< (int)sim.ontable.high << " "
-					<< (int)sim.ontable.joker << std::endl;
-				std::cout << std::hex
-					<< (int)h.type << " "
-					<< (int)h.suit << " "
-					<< (int)h.low << " "
-					<< (int)h.high << " "
-					<< (int)h.joker << std::endl;
-				FAIL();
-			}
-		}
+auto h = montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,5000);
+if(!h.ispass()){
+	if(h.suit!=sim.ontable.suit){
+		std::cout << std::hex
+		<< (int)sim.ontable.type << " "
+		<< (int)sim.ontable.suit << " "
+		<< (int)sim.ontable.low << " "
+		<< (int)sim.ontable.high << " "
+		<< (int)sim.ontable.joker << std::endl;
+		std::cout << std::hex
+		<< (int)h.type << " "
+		<< (int)h.suit << " "
+		<< (int)h.low << " "
+		<< (int)h.high << " "
+		<< (int)h.joker << std::endl;
+		FAIL();
 	}
+}
+}
 }
 
 int main(int argc, char **argv) {

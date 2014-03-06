@@ -37,28 +37,36 @@ DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &
 	simulator sim;
 
 	const int handnum = validHands(mytefuda,ontable,lock,rev,myhands);
-	if(handnum==0){
-		return PassHand;
+
+	if(handnum==1){//場に何もない時...これで上がる。それ以外...パス
+		return myhands[0];
 	}
 	Bandit::UCB1_tuned bandit(handnum);
+	int count=0;
 	for(int i=0;i<playoutnum;i++){
 		const int idx = bandit.next();
 		siminitter.initialize(sim);
 		sim.puthand(myhands[idx]);
+
 		while(!sim.isend(mypos)){
 			Cards t = sim.CurrentPlayerHand();
 			const int n = validHands(t,sim.ontable,sim.lock,sim.rev,buf);
 			if(n==0){
-				//std::cout << "pass " << std::hex << (int)sim.goalflag <<  std::endl;
 				sim.puthand(PassHand);
-			}else{
+			}else if(n==2){
+				sim.puthand(buf[0]);
+			}
+			else{
 				std::uniform_int_distribution<int> distribution( 0, n-1 ) ;
 				sim.puthand(buf[distribution(engine)]);
 			}
+			count++;
 		}
-		constexpr double reward[] = {1,1,0.5,0,0};
+		constexpr double reward[] = {0.98,0.88,0.5,0.11,0.017};
 		bandit.putscore(idx,reward[sim.rank(mypos)]);
+		//std::cout << idx << " " <<handnum <<" "<< reward[sim.rank(mypos)] << " " << count << std::endl;
 	}
+	//std::cout << bandit.next() << std::endl;
 	return myhands[bandit.next()];
 }
 
@@ -67,8 +75,10 @@ uint64_t DA::montecarlo_uniform_foreign(uint64_t mytefuda,uint64_t rest,int32_t 
 	const Hand ontable = Hand::fromBin(ontable_bin);
 	int tn[5];
 	for(int i=0;i<5;i++){
+		//std::cout << tefudanums[i] << " ";
 		tn[i] = tefudanums[i];
 	}
+	//std::cout << std::endl;
 	/*
 	std::cout << (int)lock << " " << (int)rev << " " 
 	<< (int) ontable.suit << " "

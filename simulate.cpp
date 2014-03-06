@@ -6,8 +6,9 @@
 #include <algorithm>
 #include <random>
 
+
 inline bool resethand(DA::Cards ontable,DA::Cards put){
-	if(put&DA::Eights){
+	if((put&DA::Eights)!=0){
 		return true;
 	}
 	if(ontable==DA::JOKER&&put==DA::S3){
@@ -27,46 +28,49 @@ inline int nextturn(int turn,uint8_t flag){
 }
 
 void DA::simulator::puthand(const Hand& hand){
-	Cards cs = hand.cards();
-	Cards tefuda = CurrentPlayerHand()^cs;
-	Cards tablecards = ontable.cards();
-	hands[turn] = tefuda;
+	constexpr uint8_t fullraise = (1<<playernum)-1;
 
-	lock = lock||ontable.suit==hand.suit;
-	if(hand.qty()>=4){
-		rev = !rev;
-	}
-	if(tefuda==0){
-		//上がり!!
-		goalflag|=1<<turn;
-		passflag|=goalflag;
-		if(resethand(tablecards,cs) || popcnt(passflag)==playernum){
-			reset();
-		}
-		turn = nextturn(turn,passflag);
-	}else{
-		if(resethand(tablecards,cs)){
+	if(hand.ispass()){
+		passflag |= 1<<turn;
+		if(passflag==fullraise){
 			reset();
 		}else{
-			if(cs){
-				ontable = hand;
-				turn = nextturn(turn,passflag);
+			turn = nextturn(turn,passflag);
+		}
+	}else{
+		lock = lock||(ontable.suit==hand.suit);
+		if(hand.isrev()){
+			rev = !rev;
+		}
+		const Cards cs = hand.cards();
+		const Cards tefuda = CurrentPlayerHand()^cs;
+		const Cards tablecards = ontable.cards();
+		hands[turn] = tefuda;
+		if(tefuda==0ull){
+			goalflag |= 1<<turn;
+			passflag |= goalflag;
+			if(resethand(tablecards,cs)||passflag==fullraise){
+				reset();
+			}
+			if(goalflag==fullraise){
+				return;
 			}else{
-				//pass
-				passflag|=(1<<turn);
-				if(popcnt(passflag)==playernum){
-					reset();
-				}else{
-					turn = nextturn(turn,passflag);
-				}
+				turn = nextturn(turn,passflag);
+			}
+		}else{
+			if(resethand(tablecards,cs)){
+				reset();
+			}else{
+				turn = nextturn(turn,passflag);
 			}
 		}
+		
 	}
 }
 
 void DA::simulator::initializeRandom(){
 	std::random_device rd;
-	std::mt19937 mt(rd());
+	std::mt19937 mt(159);
 	std::fill(hands,hands+playernum,0ull);
 	constexpr int yamasize = 53;
 	int yama[yamasize];

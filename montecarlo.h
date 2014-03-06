@@ -34,7 +34,7 @@ namespace DA{
 			unsigned seed1 = 1000000;//std::chrono::system_clock::now().time_since_epoch().count();
 			std::mt19937 engine( seed1 ) ;
 			mt = engine;
-
+			rest = rest & (~mytefuda);
 			for(int i=0;(rest>>i)!=0;i++){
 				if(((rest>>i)&1ull) == 1){
 					yama.push_back(u<<i);

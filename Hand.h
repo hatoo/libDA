@@ -29,6 +29,17 @@ namespace DA{
 		inline bool ispass()const{
 			return type==HandType::PASS;
 		}
+		inline bool isrev()const{
+			switch(type){
+				case HandType::GROUP:
+					return qty()>=4;
+				case HandType::STAIR:
+					return qty()>=5;
+				default:
+					return false;
+			}
+			return false;
+		}
 		inline int qty()const{
 			switch(type){
 				case HandType::PASS:
