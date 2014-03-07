@@ -286,6 +286,7 @@ TEST(simulator,finitetime){
 }
 
 TEST(simulator,humancheck){
+	/*
 	std::mt19937_64 mt(1234);
 	simulator sim;
 	Hand hs[512];
@@ -312,7 +313,7 @@ TEST(simulator,humancheck){
 				sim.puthand(PassHand);
 			}
 		}
-	}
+	}*/
 }
 
 TEST(simulatorInitializer,initialize){
@@ -406,6 +407,30 @@ if(!h.ispass()){
 }
 }
 }
+
+TEST(exchange,t){
+	for(int i=0;i<20;i++){
+		simulator sim;
+		sim.initializeRandom();
+		auto h = sim.hands[0];
+		int ranks[] = {0,1,2,3,4};
+		auto e = exchange_montecarlo_uniform(h,ranks,0,4000);
+		ASSERT_EQ(popcnt(e),2);
+		ASSERT_EQ(h&e,e);
+	}
+}
+TEST(exchange,foreign){
+	for(int n=1;n<=2;n++)
+	for(int i=0;i<20;i++){
+		simulator sim;
+		sim.initializeRandom();
+		auto h = sim.hands[0];
+		auto e = exchange_montecarlo_uniform_foreign(h,n==2?0:1,4000);
+		ASSERT_EQ(popcnt(e),n);
+		ASSERT_EQ(h&e,e);
+	}
+}
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

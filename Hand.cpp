@@ -144,7 +144,7 @@ uint64_t DA::Hand::toBin()const{
 	const uint64_t l64 = low;
 	const uint64_t h64 = high;
 	const uint64_t j64 = joker;
-	return t64|(suit<<8)|(l64<<16)|(h64<<24)|(j64<<32);
+	return t64|(s64<<8)|(l64<<16)|(h64<<24)|(j64<<32);
 }
 DA::Hand DA::Hand::fromBin(uint64_t bin){
 	HandType type = (HandType)(bin&0xf);
