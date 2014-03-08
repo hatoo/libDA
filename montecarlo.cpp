@@ -37,8 +37,35 @@ void DA::simulatorInitializer::initialize_fromD3(simulator &sim){
 	}
 }
 
+int playout_uniform(DA::simulator &sim,int mypos,std::mt19937 &engine){
+	DA::Hand buf[256];
+	while(!sim.isend(mypos)){
+		DA::Cards t = sim.CurrentPlayerHand();
+		const int n = validHands(t,sim.ontable,sim.lock,sim.rev,buf);
+		if(n==0){
+			sim.puthand(DA::PassHand);
+		}else if(n==1){
+			sim.puthand(buf[0]);
+		}else{
+			bool f =false;
+			for(int k=0;k<n;k++){
+				if(buf[k].cards()==t){
+					sim.puthand(buf[k]);
+					f=true;
+					break;
+				}
+			}
+			if(!f){
+				std::uniform_int_distribution<int> distribution( 0, n-1 ) ;
+				sim.puthand(buf[distribution(engine)]);
+			}
+		}
+	}
+	return sim.rank(mypos);
+}
+
 DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
-			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum){
+	,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum){
 	std::mt19937 engine( getrandseed() ) ;
 	Hand myhands[256];
 	Hand buf[256];
@@ -54,6 +81,7 @@ DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &
 	for(int i=0;i<playoutnum;i++){
 		const int idx = bandit.next();
 		siminitter.initialize(sim);
+		
 		sim.puthand(myhands[idx]);
 		while(!sim.isend(mypos)){
 			Cards t = sim.CurrentPlayerHand();
@@ -77,8 +105,10 @@ DA::Hand DA::montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &
 				}
 			}
 		}
+		
+		//int rank = playout_uniform(sim,mypos,engine);
 		constexpr double reward[] = {1.0,0.88,0.5,0.11,0.0};
-		bandit.putscore(idx,reward[sim.rank(mypos)]);
+		bandit.putscore(idx,reward[/*rank*/sim.rank(mypos)]);
 	}
 	return myhands[bandit.bestmean()];
 }
@@ -146,13 +176,14 @@ DA::Cards DA::exchange_montecarlo_uniform(DA::Cards tefuda,const int ranks[],int
 	const int aite = iranks[myrank==0?4:3];
 	simulatorInitializer siminitter(tefuda,AllCards^tefuda,mypos,PassHand,tefudanums,0,0,false,false);
 	simulator sim;
-	Hand buf[256];
+	//Hand buf[256];
 	for(int i=0;i<playoutnum;i++){
 		const int idx = bandit.next();
 		siminitter.initialize_fromD3(sim);
 		const Cards e = cs[idx];
 		doexchange(sim.hands[mypos],sim.hands[aite],e);
-		while(!sim.isend(mypos)){
+		
+		/*while(!sim.isend(mypos)){
 			Cards t = sim.CurrentPlayerHand();
 			const int n = validHands(t,sim.ontable,sim.lock,sim.rev,buf);
 			if(n==0){
@@ -173,15 +204,16 @@ DA::Cards DA::exchange_montecarlo_uniform(DA::Cards tefuda,const int ranks[],int
 					sim.puthand(buf[distribution(engine)]);
 				}
 			}
-		}
+		}*/
+			int rank = playout_uniform(sim,mypos,engine);
 		constexpr double reward[] = {1.0,0.88,0.5,0.11,0.0};
-		bandit.putscore(idx,reward[sim.rank(mypos)]);
+		bandit.putscore(idx,reward[rank]);
 	}
 	return cs[bandit.bestmean()];
 }
 
 uint64_t DA::montecarlo_uniform_foreign(uint64_t mytefuda,uint64_t rest,int32_t mypos,uint64_t ontable_bin
-			,int32_t *tefudanums,uint8_t passflag,uint8_t goalflag,uint8_t lock,uint8_t rev,int32_t playoutnum){
+	,int32_t *tefudanums,uint8_t passflag,uint8_t goalflag,uint8_t lock,uint8_t rev,int32_t playoutnum){
 	const Hand ontable = Hand::fromBin(ontable_bin);
 	int tn[5];
 	for(int i=0;i<5;i++){

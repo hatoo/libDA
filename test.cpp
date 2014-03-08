@@ -59,6 +59,9 @@ void dump(const simulator &sim){
 TEST(popcnt,test){
 	ASSERT_EQ(popcnt(0x111full),7);
 }
+TEST(Cards,AllCards){
+	ASSERT_EQ(popcnt(AllCards),53);
+}
 
 TEST(SingleJoker,cards){
 	ASSERT_EQ(SingleJoker.cards(),JOKER);

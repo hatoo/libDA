@@ -48,6 +48,8 @@ namespace DA{
 		void initialize(simulator &sim);
 		void initialize_fromD3(simulator &sim);
 	};
+
+	//int playout_uniform(simulator &sim,int mypos);
 	Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
 			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
 
@@ -57,4 +59,5 @@ namespace DA{
 	extern "C" uint64_t montecarlo_uniform_foreign(uint64_t mytefuda,uint64_t rest,int32_t mypos,uint64_t ontable_bin
 			,int32_t *tefudanums,uint8_t passflag,uint8_t goalflag,uint8_t lock,uint8_t rev,int32_t playoutnum);
 	extern "C" uint64_t exchange_montecarlo_uniform_foreign(uint64_t tefuda,int32_t myrank,int32_t playoutnum);
+
 }

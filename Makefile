@@ -24,7 +24,7 @@ montecarlo.o : montecarlo.cpp montecarlo.h
 	$(CC) -c -o montecarlo.o montecarlo.cpp
 
 prof: profile.cpp montecarlo.cpp montecarlo.h Card.cpp Card.h Hand.h Hand.cpp simulate.cpp simulate.h ucb1_tuned.cpp ucb1_tuned.h
-	$(CCpg) -o prof profile.cpp montecarlo.cpp Card.cpp Hand.cpp simulate.cpp ucb1_tuned.cpp
+	$(CCpg) -o prof profile.cpp montecarlo.cpp Card.cpp Hand.cpp simulate.cpp ucb1_tuned.cpp -g -fmudflap -lmudflap
 
 clean :
 	rm *.o
