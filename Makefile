@@ -3,7 +3,7 @@ CCtest = g++ -std=c++1y -msse4.2 -Wall
 CCpg = g++ -std=c++1y -msse4.2 -O3 -Wall -pg
 
 default : Hand.o Card.o ucb1_tuned.o montecarlo.o simulate.o
-	$(CC) -shared -o libDA.dll Hand.o Card.o ucb1_tuned.o montecarlo.o simulate.o -Wl,--export-all-symbols
+	$(CC) -shared -o libDA.dll Hand.o Card.o ucb1_tuned.o montecarlo.o simulate.o
 
 Hand.o : Hand.h Hand.cpp
 	$(CC) -c -o Hand.o Hand.cpp

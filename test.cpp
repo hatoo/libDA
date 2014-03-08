@@ -7,6 +7,7 @@
 #include <random>
 #include <algorithm>
 #include <set>
+#include "mlalgo.h"
 
 using namespace DA;
 
@@ -14,29 +15,29 @@ void dump(Cards cs){
 	char prefixs[] = "SHDC";
 	int nums[] = {0,3,4,5,6,7,8,9,10,11,12,13,1,2,99,99,99,99};
 	std::cout << "[ ";
-	for(int i=0;i<52+4;i++){
-		if((cs>>i)&1)
-		std::cout << prefixs[i%4] << std::dec << nums[i/4] << " ";
-	}
-	if(cs&JOKER){
-		std::cout << "JOKER";
-	}
-	std::cout << " ]" << std::endl;
+		for(int i=0;i<52+4;i++){
+			if((cs>>i)&1)
+				std::cout << prefixs[i%4] << std::dec << nums[i/4] << " ";
+		}
+		if(cs&JOKER){
+			std::cout << "JOKER";
+		}
+		std::cout << " ]" << std::endl;
 }
 
 void dump(const Hand &h){
 	switch(h.type){
 		case HandType::PASS:
-			std::cout << "type:Pass ";
-			break;
+		std::cout << "type:Pass ";
+		break;
 		case HandType::GROUP:
-			std::cout << "type:Group ";
-			break;
+		std::cout << "type:Group ";
+		break;
 		case HandType::STAIR:
-			std::cout << "type:Stair ";
-			break;
+		std::cout << "type:Stair ";
+		break;
 		default:
-			std::cout << "type:broken("<<(int)h.type<<") ";
+		std::cout << "type:broken("<<(int)h.type<<") ";
 	}
 	std::cout << "low: " << (int)h.low << " ";
 	std::cout << "high: " << (int)h.high << " ";
@@ -289,8 +290,7 @@ TEST(simulator,finitetime){
 }
 
 TEST(simulator,humancheck){
-	/*
-	std::mt19937_64 mt(1234);
+/*std::mt19937_64 mt(1234);
 	simulator sim;
 	Hand hs[512];
 	int counts[5]={0};
@@ -316,7 +316,8 @@ TEST(simulator,humancheck){
 				sim.puthand(PassHand);
 			}
 		}
-	}*/
+	}
+*/
 }
 
 TEST(simulatorInitializer,initialize){
@@ -386,31 +387,44 @@ TEST(montecarlo_uniform,lock){
 			rest |= sim.hands[i];
 			nums[i] = popcnt(sim.hands[i]);
 		}
-		/*
-Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
-			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);
-		*/
-auto h = montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,5000);
-if(!h.ispass()){
-	if(h.suit!=sim.ontable.suit){
-		std::cout << std::hex
-		<< (int)sim.ontable.type << " "
-		<< (int)sim.ontable.suit << " "
-		<< (int)sim.ontable.low << " "
-		<< (int)sim.ontable.high << " "
-		<< (int)sim.ontable.joker << std::endl;
-		std::cout << std::hex
-		<< (int)h.type << " "
-		<< (int)h.suit << " "
-		<< (int)h.low << " "
-		<< (int)h.high << " "
-		<< (int)h.joker << std::endl;
-		FAIL();
+		/*Hand montecarlo_uniform(Cards mytefuda,Cards rest,int mypos,const Hand &ontable
+			,int *tefudanums,uint8_t passflag,uint8_t goalflag,bool lock,bool rev,int playoutnum);*/
+		auto h = montecarlo_uniform(sim.hands[0],rest,0,sim.ontable,nums,sim.passflag,sim.goalflag,sim.lock,sim.rev,5000);
+		if(!h.ispass()){
+			if(h.suit!=sim.ontable.suit){
+				std::cout << std::hex
+				<< (int)sim.ontable.type << " "
+				<< (int)sim.ontable.suit << " "
+				<< (int)sim.ontable.low << " "
+				<< (int)sim.ontable.high << " "
+				<< (int)sim.ontable.joker << std::endl;
+				std::cout << std::hex
+				<< (int)h.type << " "
+				<< (int)h.suit << " "
+				<< (int)h.low << " "
+				<< (int)h.high << " "
+				<< (int)h.joker << std::endl;
+				FAIL();
+			}
+		}
 	}
 }
-}
-}
 
+TEST(mlalgo,select){
+	std::mt19937 engine(123456);
+	double probs[100];
+	int counts[100]={0};
+	for(auto &p:probs){
+		p=1;
+	}
+	for(int i=0;i<100000;i++){
+		auto ret = ML::select(probs,100,engine);
+		ASSERT_LT(ret,100);
+		ASSERT_GE(ret,0);
+		counts[ret]++;
+	}
+}
+/*
 TEST(exchange,t){
 	for(int i=0;i<20;i++){
 		simulator sim;
@@ -433,7 +447,7 @@ TEST(exchange,foreign){
 		ASSERT_EQ(h&e,e);
 	}
 }
-
+*/
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
